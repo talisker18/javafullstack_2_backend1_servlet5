@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  
+  <session-config>
+       <session-timeout>15</session-timeout> <!-- 15min, then session timeout -->
+  </session-config>
+  
+  <display-name>javafullstack_2_backend1_servlet5</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>DisplayNameServlet</display-name>
+    <servlet-name>DisplayNameServlet</servlet-name>
+    <servlet-class>com.displayname.DisplayNameServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DisplayNameServlet</servlet-name>
+    <url-pattern>/DisplayNameServlet</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <display-name>LogFilter</display-name>
+    <filter-name>LogFilter</filter-name>
+    <filter-class>com.displayname.LogFilter</filter-class>
+    <init-param>
+      <param-name>logFilterParam</param-name>
+      <param-value>Testing passing values to init method</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>LogFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter>
+    <display-name>ValidationFilter</display-name>
+    <filter-name>ValidationFilter</filter-name>
+    <filter-class>com.displayname.ValidationFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>ValidationFilter</filter-name>
+    <url-pattern>/DisplayNameServlet</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ReadCookiesServlet</display-name>
+    <servlet-name>ReadCookiesServlet</servlet-name>
+    <servlet-class>com.displayname.ReadCookiesServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReadCookiesServlet</servlet-name>
+    <url-pattern>/ReadCookiesServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SessionTrackingServlet</display-name>
+    <servlet-name>SessionTrackingServlet</servlet-name>
+    <servlet-class>com.displayname.SessionTrackingServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SessionTrackingServlet</servlet-name>
+    <url-pattern>/SessionTrackingServlet</url-pattern>
+  </servlet-mapping>
+</web-app>

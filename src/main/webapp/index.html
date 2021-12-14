@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Enter Name</title>
+</head>
+<body>
+	<form action="DisplayNameServlet" method="GET"> <!-- here, put the url of the servlet you want to call 
+	important: do not put a '/' in front of the name of the URL (like /DisplayNameServlet), because we have already a '/' at the end of the base URL: http://localhost:8081/javafullstack_2_backend1_servlet5/
+	
+	but in the web.xml, the URL path of the servlet has to be with '/'-->
+		<input type="text" id="firstName" name="firstName">
+		<label for="firstName">First Name</label><br><br>
+		
+		<input type="text" id="lastName" name="lastName">
+		<label for="lastName">Last Name</label><br><br>
+		
+		<input type="text" id="email" name="email">
+		<label for="email">Email</label><br><br>
+		
+		<input type="password" id="password" name="password">
+		<label for="password">password</label><br><br>
+		
+		<input type="submit" value="Submit form">
+	</form>
+</body>
+</html>
